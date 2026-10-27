@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillMatch | Internship Readiness</title>
+    <meta name="description" content="Analyze your internship readiness with SkillMatch, an ML-powered student assessment tool.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+
+<body>
+    <div class="page-shell">
+
+        <header class="navbar">
+            <a class="brand" href="/">
+                <span class="brand-icon">S</span>
+                <span>SkillMatch<span class="brand-dot">.</span></span>
+            </a>
+
+            <div class="nav-right">
+                <span class="nav-status">
+                    <span class="status-dot"></span>
+                    ML-powered assessment
+                </span>
+                <a href="#assessment" class="nav-link">Get started ↗</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        YOUR CAREER STARTS HERE
+                    </div>
+
+                    <h1>Are you ready for your next <span>big opportunity?</span></h1>
+
+                    <p class="hero-description">
+                        Your skills tell a story. Discover your internship readiness,
+                        compare machine learning predictions, and identify where to grow.
+                    </p>
+
+                    <a href="#assessment" class="primary-button">
+                        Assess my readiness <span>↗</span>
+                    </a>
+
+                    <div class="hero-footnote">
+                        <span>✦</span> Built for students. Designed for growth.
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="visual-orbit orbit-one"></div>
+                    <div class="visual-orbit orbit-two"></div>
+
+                    <div class="floating-tag tag-top">
+                        <span class="tag-icon purple-icon">✳</span>
+                        <span><strong>5 key factors</strong><small>One complete profile</small></span>
+                    </div>
+
+                    <div class="hero-card">
+                        <div class="hero-card-top">
+                            <span class="mini-label">YOUR POTENTIAL</span>
+                            <span class="sparkle">✦</span>
+                        </div>
+
+                        <div class="hero-card-symbol">S<span>.</span></div>
+                        <h2>Make your next move count.</h2>
+                        <p>Small improvements today. Better opportunities tomorrow.</p>
+
+                        <div class="mini-progress">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="hero-card-bottom">
+                            <span>Skills</span>
+                            <span>Projects</span>
+                            <span>Practice</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-tag tag-bottom">
+                        <span class="tag-icon green-icon">↗</span>
+                        <span><strong>Room to grow</strong><small>Progress starts with insight</small></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="stats-strip" aria-label="Assessment overview">
+                <div class="stat-item">
+                    <span class="stat-number">05</span>
+                    <span class="stat-copy">Assessment factors</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">02</span>
+                    <span class="stat-copy">ML algorithms</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">01</span>
+                    <span class="stat-copy">Personalized assessment</span>
+                </div>
+            </section>
+
+            <section class="assessment-section" id="assessment">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">
+                            <span class="eyebrow-line"></span>
+                            LET'S GET TO KNOW YOU
+                        </div>
+                        <h2>Your readiness <span>snapshot.</span></h2>
+                        <p>Enter your current profile. Be honest — this is about finding your next step.</p>
+                    </div>
+
+                    <div class="step-indicator">
+                        <span class="step-number">01</span>
+                        <span>YOUR PROFILE</span>
+                    </div>
+                </div>
+
+                <div class="assessment-layout">
+                    <form id="assessmentForm" class="assessment-card">
+                        <div class="card-heading">
+                            <div class="card-heading-icon">✳</div>
+                            <div>
+                                <h3>Candidate profile</h3>
+                                <p>Tell us where you stand today.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="skills">Technical skills <span class="required">*</span></label>
+                                <div class="input-wrap">
+                                    <input type="number" id="skills" name="skills_score"
+                                        min="0" max="100" value="75" required>
+                                    <span class="input-suffix">/ 100</span>
+                                </div>
+                                <small>Rate your current technical proficiency.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projects">Projects completed <span class="required">*</span></label>
+                                <div class="input-wrap">
+                                    <input type="number" id="projects" name="projects"
+                                        min="0" max="10" value="2" required>
+                                    <span class="input-suffix">projects</span>
+                                </div>
+                                <small>Include academic and personal projects.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="hours">Weekly coding practice <span class="required">*</span></label>
+                                <div class="input-wrap">
+                                    <input type="number" id="hours" name="coding_hours"
+                                        min="0" max="80" value="5" required>
+                                    <span class="input-suffix">hrs / week</span>
+                                </div>
+                                <small>Average hours spent coding each week.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cs">CS fundamentals <span class="required">*</span></label>
+                                <div class="input-wrap">
+                                    <input type="number" id="cs" name="cs_score"
+                                        min="0" max="100" value="70" required>
+                                    <span class="input-suffix">/ 100</span>
+                                </div>
+                                <small>Your understanding of core CS concepts.</small>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="communication">Communication skills <span class="required">*</span></label>
+                                <div class="input-wrap">
+                                    <input type="number" id="communication" name="communication"
+                                        min="0" max="100" value="65" required>
+                                    <span class="input-suffix">/ 100</span>
+                                </div>
+                                <small>Self-assessed confidence in explaining ideas and communicating.</small>
+                            </div>
+                        </div>
+
+                        <div class="form-note">
+                            <span>ⓘ</span>
+                            Your inputs are assessed by two trained classification models.
+                        </div>
+
+                        <button type="submit" class="submit-button" id="analyzeButton">
+                            <span id="buttonText">Analyze my readiness</span>
+                            <span class="button-arrow">↗</span>
+                        </button>
+
+                        <p class="form-error" id="formError" role="alert" hidden></p>
+                    </form>
+
+                    <aside class="insight-panel">
+                        <div class="insight-top">
+                            <span class="insight-kicker">THE SKILLMATCH APPROACH</span>
+                            <div class="insight-illustration">✳</div>
+                        </div>
+
+                        <h3>Not just a result. A starting point.</h3>
+                        <p>Understand how different factors contribute to a readiness assessment.</p>
+
+                        <div class="factor-list">
+                            <div class="factor-item">
+                                <span class="factor-icon">⌘</span>
+                                <span><strong>Technical ability</strong><small>Skills & CS fundamentals</small></span>
+                            </div>
+                            <div class="factor-item">
+                                <span class="factor-icon">▤</span>
+                                <span><strong>Hands-on experience</strong><small>Projects & coding practice</small></span>
+                            </div>
+                            <div class="factor-item">
+                                <span class="factor-icon">◎</span>
+                                <span><strong>Professional growth</strong><small>Communication skills</small></span>
+                            </div>
+                        </div>
+
+                        <div class="insight-disclaimer">
+                            <span>✦</span>
+                            <p>This tool supports self-assessment. It does not guarantee internship selection.</p>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            
+<section class="results-section" id="results" hidden>
+    <div class="section-heading">
+        <p class="eyebrow">YOUR ASSESSMENT</p>
+        <h2>Your SkillMatch report</h2>
+        <p>Understand your current profile and decide what to work on next.</p>
+    </div>
+
+    <!-- Main readiness verdict -->
+    <div class="readiness-summary" id="readinessSummary">
+        <p class="eyebrow">YOUR INTERNSHIP READINESS</p>
+        <h3 id="readinessVerdict">Assessment complete</h3>
+        <p id="readinessExplanation"></p>
+    </div>
+
+    <!-- Candidate's submitted profile -->
+    <div class="profile-summary">
+        <h3>Your profile</h3>
+        <div class="profile-grid">
+            <div class="profile-item">
+                <span>Skills score</span>
+                <strong id="profileSkills">—</strong>
+            </div>
+            <div class="profile-item">
+                <span>Projects completed</span>
+                <strong id="profileProjects">—</strong>
+            </div>
+            <div class="profile-item">
+                <span>Coding practice</span>
+                <strong id="profileHours">—</strong>
+            </div>
+            <div class="profile-item">
+                <span>CS fundamentals</span>
+                <strong id="profileCS">—</strong>
+            </div>
+            <div class="profile-item">
+                <span>Communication</span>
+                <strong id="profileCommunication">—</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- Model predictions -->
+    <div class="model-results">
+        <h3>Model predictions</h3>
+        <p class="section-description">
+            Each model classifies your profile using patterns learned from training data.
+        </p>
+
+        <div class="model-result-grid">
+            <article class="model-result-card">
+                <p class="eyebrow">MODEL 01</p>
+                <h4>Logistic Regression</h4>
+                <p class="prediction-label" id="logisticResult">—</p>
+            </article>
+
+            <article class="model-result-card">
+                <p class="eyebrow">MODEL 02</p>
+                <h4>Random Forest</h4>
+                <p class="prediction-label" id="forestResult">—</p>
+            </article>
+        </div>
+    </div>
+
+    <!-- Input-based improvement suggestions -->
+    <div class="improvement-panel">
+        <h3>Your next steps</h3>
+        <p class="section-description">
+            Suggestions based on the information you entered.
+        </p>
+        <ul id="improvementList"></ul>
+    </div>
+
+    <!-- Keep model evaluation separate from the candidate's result -->
+    <div class="metrics-panel">
+        <div class="metrics-heading">
+            <div>
+                <h3>How our models performed</h3>
+                <p class="section-description">
+                    Evaluation on the held-out test dataset.
+                </p>
+            </div>
+            <span class="metrics-tag">MODEL EVALUATION</span>
+        </div>
+
+        <p class="metrics-disclaimer">
+            This prototype uses a small synthetic dataset with rule-generated
+            labels. These scores do not establish real-world internship
+            prediction accuracy.
+        </p>
+
+        <div id="metricsContainer"></div>
+    </div>
+
+    <button type="button" id="resetButton" class="secondary-button">
+        Assess another profile
+    </button>
+</section>
+
+        </main>
+
+        <footer class="footer">
+            <a class="brand footer-brand" href="/">
+                <span class="brand-icon">S</span>
+                <span>skillmatch<span class="brand-dot">.</span></span>
+            </a>
+            <p>Built to help students take their next step.</p>
+            <span class="footer-credit">FSD + MACHINE LEARNING PROJECT</span>
+        </footer>
+    </div>
+</body>
+</html>
